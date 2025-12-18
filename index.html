@@ -4,9 +4,233 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Barnabas Paul | Certified Accountant</title>
-    <link rel="stylesheet" href="paulosa.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background: #d8e3f0;
+            color: #000;
+            line-height: 1.5;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            background: #0a2540;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            color: white;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Home */
+        .home {
+            min-height: 35vh;
+            display: flex;
+            background: linear-gradient(to right, #255688, #0675cf);
+            color: white;
+        }
+
+        .home-container {
+            display: flex;
+            gap: 40px;
+            padding: 40px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .profile-img {
+            width: 240px;
+            height: 320px;
+            border-radius: 50%;
+            border: 5px solid #00d4ff;
+            object-fit: cover;
+        }
+
+        .home span {
+            color: #00d4ff;
+        }
+
+        .buttons {
+            margin-top: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 25px;
+            background: #00d4ff;
+            color: #0a2540;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        .btn.outline {
+            background: transparent;
+            border: 2px solid #00d4ff;
+            color: #00d4ff;
+        }
+
+        /* Sections */
+        section {
+            padding: 60px 40px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Portfolio */
+        .portfolio-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 45px;
+        }
+
+        .portfolio-item {
+            background: white;
+            width: 500px;
+            border-radius: 18px;
+            overflow: hidden;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .portfolio-item img {
+            width: 95%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        /* Contact */
+        .contact-form {
+            max-width: 500px;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .contact-form button {
+            padding: 10px;
+            background: #0a2540;
+            color: white;
+            border: none;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .note {
+            text-align: center;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background: #0a2540;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: #25D366;
+            color: white;
+            font-size: 28px;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        .whatsapp-btn:hover {
+            background: #1ebe5d;
+        }
+
+        /* Animations */
+        .fade-in {
+            animation: fadeIn 1.5s ease-in;
+        }
+
+        .slide-up {
+            animation: slideUp 1.2s ease-in;
+        }
+
+        .zoom-in {
+            animation: zoomIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes zoomIn {
+            from { transform: scale(0.9); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+    </style>
 </head>
+
 <body>
+
     <!-- Navbar -->
     <nav class="navbar">
         <h2 class="logo">Barnabas Paul</h2>
@@ -21,110 +245,44 @@
     <!-- Home -->
     <section id="home" class="home">
         <div class="home-container fade-in">
-            <img src="https://scontent.fabv2-2.fna.fbcdn.net/v/t39.30808-6/497787618_10088802087837930_8546759232533527917_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeHSQo0Kh-JjrGXVm-KscMRtGEwU7etJfhoYTBTt60l-Ghtu1FayIZ154PRIYa7ymSkqn1izu-PBVLmAU5I5XW6f&_nc_ohc=OW8mG6lJhGAQ7kNvwE2P8Ye&_nc_oc=AdkJNZif1LLJjkFOcL3lxr3gdtuCktxxziiBb1yUg4VsVg_fooGPRNwj2ViasENHDws&_nc_zt=23&_nc_ht=scontent.fabv2-2.fna&_nc_gid=uiRQ_2sL8WoMwTwaDQYkUA&oh=00_Afn1h5EMWu0fPnoPQegaA88JnD5b50b_XHP1xKRs2jTgBw&oe=69458D92" alt="https://scontent.fabv2-2.fna.fbcdn.net/v/t39.30808-6/497787618_10088802087837930_8546759232533527917_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeHSQo0Kh-JjrGXVm-KscMRtGEwU7etJfhoYTBTt60l-Ghtu1FayIZ154PRIYa7ymSkqn1izu-PBVLmAU5I5XW6f&_nc_ohc=OW8mG6lJhGAQ7kNvwE2P8Ye&_nc_oc=AdkJNZif1LLJjkFOcL3lxr3gdtuCktxxziiBb1yUg4VsVg_fooGPRNwj2ViasENHDws&_nc_zt=23&_nc_ht=scontent.fabv2-2.fna&_nc_gid=uiRQ_2sL8WoMwTwaDQYkUA&oh=00_Afn1h5EMWu0fPnoPQegaA88JnD5b50b_XHP1xKRs2jTgBw&oe=69458D92jpg" class="profile-img">
+            <img src="https://scontent.fabv2-2.fna.fbcdn.net/v/t39.30808-6/497787618_10088802087837930_8546759232533527917_n.jpg"
+                 alt="Barnabas Paul" class="profile-img">
 
-            <div class="home-text">
+            <div>
                 <h1>Hello, I'm <span>Barnabas Paul</span></h1>
                 <h3>Certified Accountant</h3>
                 <p>
-                    Accounting professional with strong IT skills in
-                    Excel data analysis, graphic design, web-developer and Microsoft Office.
+                    Accounting professional with strong IT skills in Excel data analysis,
+                    graphic design, web development, and Microsoft Office.
                 </p>
 
                 <div class="buttons">
                     <a href="#contact" class="btn">Hire Me</a>
-                    <a href="cv/Barnabas_Paul_CV.pdf" class="btn outline" download>
-                        Download CV
-                    </a>
+                    <a href="cv/Barnabas_Paul_CV.pdf" class="btn outline" download>Download CV</a>
                 </div>
             </div>
         </div>
     </section>
-    
-    <!-- About -->
-    <section id="about" class="about slide-up">
-        <h2>About Me</h2>
-        <p>
-            I am a versatile professional with a strong foundation in accounting, combined with practical skills in graphic design, data analysis, and web development. As a certified accountant, I specialize in financial reporting, bookkeeping, and analytical problem-solving that supports sound business decision-making and organizational growth.
-
-Beyond accounting, I apply data analysis skills using Microsoft Excel to transform raw data into meaningful insights through dashboards, reports, and performance analysis. This enables businesses to track trends, improve efficiency, and make data-driven decisions with confidence.
-
-I also bring creativity and visual communication through graphic design, producing professional designs such as logos, banners, flyers, and branding materials that enhance brand identity and marketing impact. My design approach focuses on clarity, consistency, and purpose.
-
-As a web developer, I build clean, responsive, and user-friendly websites using modern web technologies. I combine functionality with good design to create professional online platforms that represent brands effectively and deliver a positive user experience.
-
-With a unique blend of financial expertise, analytical thinking, creativity, and technical skills, I am committed to delivering accurate, reliable, and innovative solutions that add real value to businesses and individuals..
-        </p>
-    </section>
-
-    <!-- Portfolio -->
-    <section id="portfolio" class="portfolio">
-        <h2 class="slide-up">My Portfolio</h2>
-
-        <div class="portfolio-container">
-
-            <div class="portfolio-item zoom-in">
-                <img src="https://timcdnprd.azureedge.net/resource/blob/230916/0e23d5be79825d9659e0f390afc53b13/eu-richtlinie-gegen-zahlungsverzug-data.jpg" alt="Accounting">
-                <h3>Accounting</h3>
-                <p>Bookkeeping, financial statements, auditing & reporting.</p>
-            </div>
-
-            <div class="portfolio-item zoom-in">
-                <img src="https://covenanttecs.com/assets/img/service/graphic-design.jpg" alt="Graphic Design">
-                <h3>Graphic Design</h3>
-                <p>Logos, banners, flyers, and branding materials.</p>
-            </div>
-
-            <div class="portfolio-item zoom-in">
-                <img src="https://www.smartsheet.com/sites/default/files/2024-11/IC-Project-Portfolio-Management-Summary-Dashboard-Template.png" alt="Data Analytics">
-                <h3>Data Analytics</h3>
-                <p>Excel dashboards, data cleaning, and business insights.</p>
-            </div>
-
-            <div class="portfolio-item zoom-in">
-                <img src="https://wallpaperaccess.com/full/1567812.jpg" alt="Data Analytics">
-                <h3>web-developer</h3>
-                <p> Responsive design, version control (Git/GitHub), deburg code, structure website and application, and business insights.</p>
-            </div>
-            <div class="portfolio-item zoom-in">
-                <img src="https://5.imimg.com/data5/EG/FC/GLADMIN-8639952/it-consulting-services-500x500.jpg" alt="Data Analytics">
-                <h3>IT CONSULTING</h3>
-                <p> IT expertise, Analytical and problem solving skills, communication and consulting abilities and Project management skills.</p>
-            </div>
-
-
-
-
-        </div>
-    </section>
 
     <!-- Contact -->
-    <section id="contact" class="contact slide-up">
+    <section id="contact" class="slide-up">
         <h2>Contact Me</h2>
 
-        <!-- Mailto Email Form -->
         <form class="contact-form"
-             action="mailto:barnabaspaul@gmail.com"
-             method="post"
-             enctype="text/plain">
-
+              action="mailto:barnabaspaul@gmail.com"
+              method="post"
+              enctype="text/plain">
             <input type="text" name="Name" placeholder="Your Name" required>
             <input type="email" name="Email" placeholder="Your Email" required>
             <textarea name="Message" placeholder="Your Message" rows="5" required></textarea>
-
             <button type="submit">Send Message</button>
         </form>
-   <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/2348075938802" class="whatsapp-btn" target="_blank">
-        💬
-    </a>
 
-        <p class="note">
-            *This form opens your email app to send the message directly.
-        </p>
+        <a href="https://wa.me/2348075938802" class="whatsapp-btn" target="_blank">💬</a>
+
+        <p class="note">*This form opens your email app to send the message directly.</p>
     </section>
- 
-    <!-- Footer -->
+
     <footer>
         <p>© 2025 Barnabas Paul. All Rights Reserved.</p>
     </footer>
